@@ -85,6 +85,14 @@ function SphereGeo({
         receiveShadow
         scale={scale}
         geometry={sphereGeometry}
+      >
+        <meshStandardMaterial color="#ffffff" roughness={0.2} metalness={0.1} />
+      </mesh>
+      <mesh
+        castShadow
+        receiveShadow
+        scale={scale * 1.002}
+        geometry={sphereGeometry}
         material={material}
         rotation={[0.3, 1, 1]}
       />
@@ -157,11 +165,11 @@ const TechStack = () => {
       (texture) =>
         new THREE.MeshStandardMaterial({
           map: texture,
-          color: "#ffffff",
+          transparent: true,
+          opacity: 1.0,
           roughness: 0.2,
           metalness: 0.1,
-          transparent: false,
-          opacity: 1.0,
+          depthWrite: false,
         })
     );
   }, []);
