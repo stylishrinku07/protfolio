@@ -212,8 +212,6 @@
   font-weight: 300;
   color: var(--accentColor);
   margin: 0;
-  margin-bottom: 25px;
-  white-space: nowrap;
 }
 
 .landing-info h2 {
@@ -260,8 +258,8 @@ h2.landing-info-h2 {
   height: 120%;
   z-index: 3;
   background-image: linear-gradient(0deg,
-      #0a0e17 35%,
-      rgba(0, 0, 0, 0) 100%);
+      var(--backgroundColor) 40%,
+      rgba(0, 0, 0, 0) 110%);
   top: 0;
   left: 0;
 }

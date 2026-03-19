@@ -16,6 +16,8 @@ const imageUrls = [
   import.meta.env.BASE_URL + "images/node.webp",
   import.meta.env.BASE_URL + "images/html.png",
   import.meta.env.BASE_URL + "images/php.png",
+  import.meta.env.BASE_URL + "images/python.png",
+  import.meta.env.BASE_URL + "images/c.png",
 ];
 const textures = imageUrls.map((url) => {
   const tex = textureLoader.load(url);
