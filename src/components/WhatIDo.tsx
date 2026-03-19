@@ -88,10 +88,9 @@ const WhatIDo = () => {
 
             <div className="what-content-in">
               <h3>DATA SCIENCE</h3>
-              <h4>Extracting Insights from Data</h4>
+              <h4>Data Analysis</h4>
               <p>
-                Applying statistical modeling and data analytics to uncover hidden patterns.
-                From exploratory analysis to impactful visualizations, I turn raw data into decisions.
+                Applying statistical modeling to uncover hidden patterns.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
@@ -129,8 +128,7 @@ const WhatIDo = () => {
               <h3>MACHINE LEARNING</h3>
               <h4>Intelligent Algorithms</h4>
               <p>
-                Designing and training models to solve complex problems. From classical ML 
-                to deep learning, I build scalable predictive and generative AI models.
+                Designing predictive AI models to solve complex real-world problems.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">

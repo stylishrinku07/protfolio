@@ -46,14 +46,14 @@
   transition: 0.5s;
   /* border: 0.5px dashed rgba(255, 255, 255, 0.3); */
   position: relative;
-  padding: 20px;
+  padding: 50px;
   box-sizing: border-box;
 }
 
 .what-noTouch:hover,
 .what-content-active {
   min-height: 67%;
-  padding: 20px;
+  padding: 40px 50px;
 }
 
 .what-noTouch:hover ~ .what-content,
@@ -294,7 +294,7 @@
     margin-left: -50px;
   }
   .what-content {
-    padding: 20px;
+    padding: 50px;
     width: 500px;
   }
   .what-content p {
@@ -303,7 +303,7 @@
   .what-noTouch:hover,
   .what-content-active {
     min-height: 67%;
-    padding: 20px;
+    padding: 50px;
   }
 
   .what-noTouch:hover ~ .what-content,
