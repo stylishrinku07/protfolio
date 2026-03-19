@@ -11,7 +11,7 @@ import {
   RapierRigidBody,
 } from "@react-three/rapier";
 
-const textureLoader = new THREE.TextureLoader();
+
 const imageUrls = [
   import.meta.env.BASE_URL + "images/node.webp",
   import.meta.env.BASE_URL + "images/html.png",
@@ -20,8 +20,27 @@ const imageUrls = [
   import.meta.env.BASE_URL + "images/c.png",
 ];
 const textures = imageUrls.map((url) => {
-  const tex = textureLoader.load(url);
+  const canvas = document.createElement("canvas");
+  canvas.width = 512;
+  canvas.height = 512;
+  const ctx = canvas.getContext("2d")!;
+  
+  // Create a solid white background to eliminate WebGL alpha bugs
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(0, 0, 512, 512);
+
+  const tex = new THREE.CanvasTexture(canvas);
   tex.colorSpace = THREE.SRGBColorSpace;
+
+  const img = new Image();
+  img.crossOrigin = "Anonymous";
+  img.onload = () => {
+    // Draw the logo padded in the center to prevent sphere wrapping distortion!
+    ctx.drawImage(img, 128, 128, 256, 256);
+    tex.needsUpdate = true;
+  };
+  img.src = url;
+  
   return tex;
 });
 
@@ -84,14 +103,6 @@ function SphereGeo({
         castShadow
         receiveShadow
         scale={scale}
-        geometry={sphereGeometry}
-      >
-        <meshStandardMaterial color="#ffffff" roughness={0.2} metalness={0.1} />
-      </mesh>
-      <mesh
-        castShadow
-        receiveShadow
-        scale={scale * 1.002}
         geometry={sphereGeometry}
         material={material}
         rotation={[0.3, 1, 1]}
@@ -165,11 +176,10 @@ const TechStack = () => {
       (texture) =>
         new THREE.MeshStandardMaterial({
           map: texture,
-          transparent: true,
-          opacity: 1.0,
+          color: "#ffffff",
           roughness: 0.2,
           metalness: 0.1,
-          depthWrite: false,
+          transparent: false,
         })
     );
   }, []);
