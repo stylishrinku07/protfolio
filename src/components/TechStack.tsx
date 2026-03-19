@@ -16,7 +16,11 @@ const imageUrls = [
   import.meta.env.BASE_URL + "images/python.png",
   import.meta.env.BASE_URL + "images/c.png",
 ];
-const textures = imageUrls.map((url) => textureLoader.load(url));
+const textures = imageUrls.map((url) => {
+  const tex = textureLoader.load(url);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  return tex;
+});
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 
@@ -28,7 +32,7 @@ type SphereProps = {
   vec?: THREE.Vector3;
   scale: number;
   r?: typeof THREE.MathUtils.randFloatSpread;
-  material: THREE.MeshStandardMaterial;
+  material: THREE.MeshPhysicalMaterial;
   isActive: boolean;
 };
 
@@ -148,13 +152,16 @@ const TechStack = () => {
   const materials = useMemo(() => {
     return textures.map(
       (texture) =>
-        new THREE.MeshStandardMaterial({
+        new THREE.MeshPhysicalMaterial({
           map: texture,
           color: "#ffffff",
-          roughness: 0.3,
-          metalness: 0.2,
-          transparent: true,
-          opacity: 1,
+          emissive: "#ffffff",
+          emissiveMap: texture,
+          emissiveIntensity: 0.4,
+          metalness: 0.1,
+          roughness: 0.2,
+          clearcoat: 1.0,
+          transparent: false,
         })
     );
   }, []);
