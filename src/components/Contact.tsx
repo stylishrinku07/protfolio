@@ -14,6 +14,12 @@ const Contact = () => {
                 swadhin1507@gmail.com
               </a>
             </p>
+            <h4>WhatsApp</h4>
+            <p>
+              <a href="https://wa.me/919178757976" target="_blank" data-cursor="disable">
+                +91 9178757976
+              </a>
+            </p>
             <h4>Education</h4>
             <p>BSc in Data Science and AI</p>
           </div>
