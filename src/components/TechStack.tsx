@@ -13,10 +13,10 @@ import {
 
 const textureLoader = new THREE.TextureLoader();
 const imageUrls = [
-  import.meta.env.BASE_URL + "images/python.webp",
-  import.meta.env.BASE_URL + "images/cpp.webp",
-  import.meta.env.BASE_URL + "images/ml.webp",
-  import.meta.env.BASE_URL + "images/data.webp",
+  import.meta.env.BASE_URL + "images/react.webp",
+  import.meta.env.BASE_URL + "images/node.webp",
+  import.meta.env.BASE_URL + "images/mongo.webp",
+  import.meta.env.BASE_URL + "images/javascript.webp",
 ];
 const textures = imageUrls.map((url) => textureLoader.load(url));
 
