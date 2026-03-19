@@ -158,9 +158,9 @@ const TechStack = () => {
         new THREE.MeshStandardMaterial({
           map: texture,
           color: "#ffffff",
-          roughness: 1.0,
-          metalness: 0.0,
-          transparent: true,
+          roughness: 0.2,
+          metalness: 0.1,
+          transparent: false,
           opacity: 1.0,
         })
     );
